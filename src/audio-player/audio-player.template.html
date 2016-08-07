@@ -1,0 +1,27 @@
+<div class="audio-player">
+    <div class="waveform" ng-mousemove="$ctrl.mouseMove($event)" ng-mouseleave="$ctrl.mouseLeave()" ng-click="$ctrl.rewind($event)">
+        <canvas id="waveform-canvas"></canvas>
+    </div>
+    <audio id="audio">
+        <source ng-repeat="file in audio.files" src="{{file.url}}" type="{{file.mime}}" >
+    </audio>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="btn-group" role="group">
+                <button ng-click="$ctrl.slower()" type="button" class="btn btn-default" title="Slower">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+                <button ng-click="$ctrl.play()" ng-hide="$ctrl.isPlaying" type="button" class="btn btn-default" title="Play">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>    
+                <button ng-click="$ctrl.pause()" ng-show="$ctrl.isPlaying" type="button" class="btn btn-default" title="Pause">
+                    <span class="glyphicon glyphicon-pause"></span>
+                </button>
+                <button ng-click="$ctrl.faster()" type="button" class="btn btn-default" title="Faster">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-offset-3 col-md-3 time">x{{speed}} {{currentPosition | time}} / {{duration | time}}</div>
+    </div>
+</div>

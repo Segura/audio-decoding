@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="audioDecodingApp" ng-controller="PageController">
+<head>
+    <meta charset="utf-8">
+    <title>Audio Decoding</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="../dist/audio-decode.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="page-header">
+                <h1><a href="#!/clips" title="To list">Audio Decoding helper</a> <small ng-bind="Page.title()"></small></h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="view-container">
+        <div ng-view class="view-frame"></div>
+    </div>
+</body>
+</html>

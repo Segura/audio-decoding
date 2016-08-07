@@ -1,0 +1,17 @@
+{
+    "name": "auduo-decoding",
+    "version": "0.5.0",
+    "author": "Gachin Alexander <a.gachin@email.com>",
+    "description": "Frontend for audio decoding service",
+    "repository": "https://github.com/Segura/audio-decoding.git",
+    "license": "MIT",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-angular-templates": "^1.0.4",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-uglify": "^2.0.0"
+    },
+    "scripts": {
+        "postinstall": "bower cache clean && bower install && grunt"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "auduo-decoding",
+    "version": "0.5.0",
+    "authors": [
+        "Gachin Alexander <a.gachin@email.com>"
+    ],
+    "description": "Frontend for audio decoding service",
+    "license": "MIT",
+    "homepage": "https://github.com/Segura/audio-decoding",
+    "private": true,
+    "dependencies": {
+        "angular": "1.5.x",
+        "angular-route": "1.5.x",
+        "angular-resource": "^1.5.8"
+    }
+}

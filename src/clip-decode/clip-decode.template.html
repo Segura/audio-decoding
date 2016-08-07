@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-7">   
+        <audio-player audio="$ctrl.clip.audio" current-position="$ctrl.audioPosition"></audio-player>
+
+        <form name="quoteForm" ng-submit="quoteForm.$valid && $ctrl.addQuite()" novalidate>
+            <fieldset class="form-group row">
+                <div class="col-md-6">
+                    <select ng-model="$ctrl.quote.person" class="form-control" ng-options="person for person in $ctrl.persons" title="Persons" required>
+                        <option value>Select a person</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input ng-model="$ctrl.quote.person" type="text" class="form-control" placeholder="Or type a name">
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <textarea ng-model="$ctrl.quote.text" class="form-control" title="Text" rows="7" required></textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Add" />
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="col-md-5 quotes">
+        <blockquote ng-show="$ctrl.quote.person || $ctrl.quote.text">
+            <cite class="clearfix">{{$ctrl.quote.person}}</cite>
+            {{$ctrl.quote.text}}
+        </blockquote>
+
+        <blockquote ng-repeat="quote in $ctrl.quotes | orderBy:'-time'">
+            <cite class="clearfix">{{quote.person}} <span class="glyphicon glyphicon-time"></span> {{quote.time | time}}</cite>
+            {{quote.text}}
+        </blockquote>
+    </div>
+</div>
